@@ -1,0 +1,39 @@
+.interview-box {
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interview-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.interview-box h2 {
+  font-size: 20px;
+  color: #2e3a8c;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.interview-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 6px 0;
+  color: #333;
+}
+
+.interview-box strong {
+  color: #2e3a8c;
+  font-weight: 600;
+}
+
+.interview-box span {
+  display: inline-block;
+  padding-left: 8px;
+  border-left: 3px solid #7289da;
+  color: #444;
+}

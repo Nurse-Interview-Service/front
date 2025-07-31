@@ -1,0 +1,32 @@
+.typing-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.fixed-ment {
+  font-size: 30px;
+  font-weight: 600;
+  color: #6785e8; 
+  margin: 0;
+}
+
+.typing-footer {
+  font-size: 30px;
+  font-weight: 600;
+  min-height: 1.5em;
+  color: #25dfa7; 
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #98c6b8;
+  animation: blink 0.8s step-end infinite;
+  border-right: none; 
+  margin: 0;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
