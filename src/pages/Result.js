@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import InterviewBox from '../components/InterviewBox'; // 개별 박스 컴포넌트
 import TypingMent from '../components/Typing';
+import ScoreChart from '../components/ScoreChart';
 import './Result.css';
 
   // analysis api analysis 에서 제공하는 형식에 따라 다르게 수정. 
@@ -85,6 +86,17 @@ import './Result.css';
           <video controls width="100%">
             <source src={`/videos/${video}`} type="video/mp4" />
           </video>
+
+          <ScoreChart
+            scores={{
+              구체성: 80,
+              논리성: 65,
+              적합성: 75,
+              표현력: 70,
+              전문성: 60
+            }}
+          />
+
         </div>
 
         <div className="result">

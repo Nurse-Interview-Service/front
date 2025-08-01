@@ -18,9 +18,19 @@
   position: sticky;
   top: 80px;
   height: fit-content;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px; 
+}
+
+.vd video {
+  border-radius: 12px; /* 비디오 모서리 둥글게 */
+  width: 100%;
+  display: block;
 }
 
 

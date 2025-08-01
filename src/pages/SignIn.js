@@ -37,7 +37,7 @@ function SignIn() {
         </div>
 
         <div className={`center ${isRevealed ? 'fade-in' : ''}`}>
-          <h2>Please Sign In</h2>
+          <h2>Sign In</h2>
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
           <div className="divider">or</div>
