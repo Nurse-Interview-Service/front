@@ -6,7 +6,7 @@ body, html {
   padding: 0;
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden; /* 가로 스크롤 방지 */
+  /*overflow-x: hidden; /* 가로 스크롤 방지 */ 
   background-color: #f8f8f8; /* 최종 배경색 적용 */
 }
 
