@@ -1,23 +1,53 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../UserContext';
+import './SignIn.css';
 
 function SignIn() {
   const { signIn } = useContext(UserContext);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  const handleReveal = () => setIsRevealed(true);
 
   const handleKakaoLogin = () => {
-    // 실제 카카오 로그인 연동은 SDK/REST API 필요
-    // 예시: window.location.href = 'https://kauth.kakao.com/oauth/authorize?...';
     alert('카카오 로그인 시도! (실제 서비스는 카카오 SDK 연동 필요)');
-    signIn('kakao_user@email.com'); // 예시
+    signIn('kakao_user@email.com');
   };
 
+  const gridSize = 10;
+  const center = (gridSize - 1) / 2;
+
   return (
-    <div className="auth-container">
-      <h2>Sign In</h2>
-      <button type="button" className="kakao-btn" onClick={handleKakaoLogin}>
-        <img src="https://developers.kakao.com/assets/img/about/logos/kakaologin/logo/kakaolink_btn_medium.png" alt="Kakao Login" style={{height:'24px', marginRight:'8px', verticalAlign:'middle'}} />
-        카카오로 로그인
-      </button>
+    <div className="login-scene">
+      <div className="login-container" 
+      onMouseEnter={() => setIsRevealed(true)}
+      onMouseLeave={() => setIsRevealed(false)}>
+        <div className="grid-overlay">
+          {Array.from({ length: gridSize * gridSize }).map((_, index) => {
+            const row = Math.floor(index / gridSize);
+            const col = index % gridSize;
+            const delay = Math.abs(center - row) + Math.abs(center - col);
+            return (
+              <div
+                key={index}
+                className={`grid-tile ${isRevealed ? 'revealed' : ''}`}
+                style={{ '--i': delay }}
+              ></div>
+            );
+          })}
+        </div>
+
+        <div className={`center ${isRevealed ? 'fade-in' : ''}`}>
+          <h2>Sign In</h2>
+          <input type="email" placeholder="email" />
+          <input type="password" placeholder="password" />
+          <div className="divider">or</div>
+          <div className="kakao-btn-wrapper">
+            <button className="kakao-circle-btn" onClick={handleKakaoLogin}>
+              <span className="kakao-k">K</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
