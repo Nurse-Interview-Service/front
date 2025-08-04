@@ -1,0 +1,226 @@
+/* 공통 배경 및 레이아웃 */
+.profile-container {
+  min-height: 100%;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f7f8fa 100%);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding-top: 100px;
+  overflow-y:auto;
+}
+.video-chart-wrapper {
+  width: 100%;
+  height: 20%;
+}
+/* 프로필 카드 */
+.profile-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 128, 255, 0.1);
+  padding: 2rem;
+  text-align: center;
+  height: min-content;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #87cefa;
+  margin-bottom: 1rem;
+}
+
+.profile-card h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-card p {
+  margin: 0.2rem 0;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* 면접 카드 영역 */
+.interview-records {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 128, 255, 0.1);
+  padding: 2rem;
+  height: min-content;
+}
+
+.interview-records h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.record-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.record-card:hover {
+  box-shadow: 0 4px 12px rgba(100, 100, 255, 0.15);
+}
+
+.record-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #d3d3d3;
+  flex-shrink: 0;
+}
+
+.record-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.record-questions p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+/* 달력 */
+.calendar-wrapper {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 128, 255, 0.1);
+  padding: 2rem;
+  height: min-content;
+}
+
+.calendar-wrapper h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.profile-card,
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.button-wrapper {
+}
+.button-ask{
+    /* Menu component */
+  width: 100%;
+  height: 30px;
+  padding-left: 30%;
+  padding-right: 30%;
+  background: rgba(0, 0, 0, 0.001);
+  background: color(display-p3 0.000 0.000 0.000 / 0.001);
+  border-radius: 100px;
+}
+.button-modify{
+    /* Menu component */
+  width: 100%;
+  height: 30px;
+  padding-left: 30%;
+  padding-right: 30%;
+  background: rgba(0, 0, 0, 0.001);
+  background: color(display-p3 0.000 0.000 0.000 / 0.001);
+  border-radius: 100px;
+}
+.glass-button{
+  /* Menu component */
+  width: 100%;
+  height: 30px;
+  padding-left: 30%;
+  padding-right: 30%;
+  background: rgba(0, 0, 0, 0.001);
+  background: color(display-p3 0.000 0.000 0.000 / 0.001);
+  border-radius: 100px;
+}
+/* 모달 배경 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 콘텐츠 */
+.modal-content {
+  background: rgba(255, 255, 255, 0.8); /* 투명한 흰 배경 */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 2rem; /* 둥글고 부드럽게 */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* 더 큰 그림자 */
+  padding: 2rem;
+  width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* 유리 느낌 강조 */
+}
+
+/* 썸네일 이미지 */
+.modal-media-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.modal-video {
+  /*padding-left: 5%;*/
+  margin-top: 20px;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+.modal-scorechart {
+  max-width: 50%;
+  padding-right: 10%;
+}
+
+@media (max-width: 768px) {
+  .modal-media-container {
+    flex-direction: column;
+  }
+}
+/* 모달 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
