@@ -35,7 +35,7 @@ body {
 }
 
 /* 프로필 카드 스타일 예시 */
-.profile-card {
+.profileModify-card {
   flex-direction: column;
   background: rgba(255, 255, 255, 0.3);
   padding: 2rem;
@@ -79,7 +79,7 @@ body {
 }
 
 /* 유리 느낌 버튼 */
-.glass-button {
+.ProfileModify-glass-button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   border: none;
@@ -120,7 +120,7 @@ body {
   width: 100%;
 
 }
-.side-panel {
+.profileModify-side-panel {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

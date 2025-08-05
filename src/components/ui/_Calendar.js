@@ -1,16 +1,22 @@
-// components/ui/calendar.js
 import React from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { ko } from "date-fns/locale";
-import { cn } from "../../lib/utils";
+import { cn } from "../../_lib/_utils";
 
-export function _calendar({ mode = "single", selected, onSelect, className }) {
+export function _Calendar({ mode = "single", selected, onSelect, className }) {
+  const handleSelect = (range) => {
+    if (mode === "range" && range?.from && !range.to) {
+      range.to = range.from;
+    }
+    onSelect?.(range);
+  };
+
   return (
     <DayPicker
       mode={mode}
       selected={selected}
-      onSelect={onSelect}
+      onSelect={handleSelect} // ✅ 수정된 핸들러 사용
       locale={ko}
       className={cn("bg-white p-4 rounded-xl shadow-md", className)}
       modifiersClassNames={{

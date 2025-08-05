@@ -5,7 +5,8 @@ import Result from '../pages/Result';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import _Profile from '../pages/_Profile';
-import ProfileModify from '../pages/_ProfileModify';
+import ProfileModify from "../pages/_ProfileModify";
+
 export const _routes = [
   {
     path: '/',
@@ -42,7 +43,7 @@ export const _routes = [
     element: _Profile,
     name: 'Profile'
   },
-  {
+      {
     path: '/profile/ProfileModify',
     element: ProfileModify,
     name: 'ProfileModify'

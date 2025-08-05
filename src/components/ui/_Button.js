@@ -1,8 +1,8 @@
 // components/ui/button.jsx
 import React, { forwardRef } from "react";
-import { cn } from "../../lib/utils"; // 상대경로로 변경
+import { cn } from "../../_lib/_utils"; // 상대경로로 변경
 
-const _button = forwardRef(
+const _Button = forwardRef(
   ({ className, variant = "default", size = "md", ...props }, ref) => {
     return (
       <button
@@ -28,6 +28,6 @@ const _button = forwardRef(
   }
 );
 
-_button.displayName = "Button";
+_Button.displayName = "Button";
 
-export { _button };
+export { _Button };

@@ -42,7 +42,7 @@ export default function ProfilePage() {
           {/* 왼쪽 위 빈 공간 */}
         <div className="left-top"></div>
         {/* 중앙 프로필 카드 */}
-        <div className="profile-card">
+        <div className="profileModify-card">
           <img src={profileImage} className="profile-image" alt="프로필"/>
           <div className="user-details">
             <p><strong>name:</strong> {username}</p>
@@ -57,9 +57,9 @@ export default function ProfilePage() {
 
         <div className="bottom-wrapper">
         {/* 왼쪽 아래 빈 공간 */}
-        <div className="side-panel">
-          <button className="glass-button">수정하기</button>
-          <button className="glass-button">문의하기</button>
+        <div className="profileModify-side-panel">
+          <button className="ProfileModify-glass-button">수정하기</button>
+          <button className="ProfileModify-glass-button">문의하기</button>
         </div>
 
         {/*아래 가운데 빈 공간*/}

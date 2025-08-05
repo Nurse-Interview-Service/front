@@ -1,7 +1,7 @@
 /* 공통 배경 및 레이아웃 */
 .profile-container {
-  min-height: 100%;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f7f8fa 100%);
+  min-height: 80%;
+  width: 100%;
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
