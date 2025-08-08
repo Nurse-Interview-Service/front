@@ -10,13 +10,13 @@ const JOBS = [
   { id: 'etc', name: '기타' }
 ];
 
-function SelectJob() {
+function _SelectJob() {
   const [selected, setSelected] = useState('');
   const navigate = useNavigate();
 
   const handleStart = () => {
     if (selected) {
-      navigate('/interview', { state: { job: selected } });
+      navigate('/GenerationLoading', { state: { job: selected } });
     }
   };
 
@@ -50,4 +50,4 @@ function SelectJob() {
   );
 }
 
-export default SelectJob;
+export default _SelectJob;

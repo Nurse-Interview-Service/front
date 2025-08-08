@@ -1,11 +1,12 @@
 import Home from '../pages/Home';
-import SelectJob from '../pages/SelectJob';
+import _SelectJob from '../pages/_SelectJob';
 import Interview from '../pages/Interview';
 import Result from '../pages/Result';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import _Profile from '../pages/_Profile';
+import profile from '../pages/Profile';
 import ProfileModify from "../pages/_ProfileModify";
+import _GenerationLoading from "../pages/_GenerationLoading";
 
 export const _routes = [
   {
@@ -15,8 +16,13 @@ export const _routes = [
   },
   {
     path: '/select-job',
-    element: SelectJob,
+    element: _SelectJob,
     name: 'SelectJob'
+  },
+  {
+    path: '/GenerationLoading',
+    element: _GenerationLoading,
+    name: 'GenerationLoading'
   },
   {
     path: '/interview',
@@ -40,7 +46,7 @@ export const _routes = [
   },
   {
     path: '/profile',
-    element: _Profile,
+    element: profile,
     name: 'Profile'
   },
       {
