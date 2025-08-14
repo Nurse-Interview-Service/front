@@ -55,7 +55,6 @@ function Result() {
           console.log('API 응답 데이터:', data);
           
           setInterviewList(data.InterviewList || []); 
-          console.log("테[스트", data.summary)
           setSummary(data.summary || '');
           
           // 모든 인터뷰 항목에서 비디오 URL 수집
