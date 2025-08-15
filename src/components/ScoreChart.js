@@ -1,4 +1,3 @@
-// src/components/ScoreChart.js
 import React from 'react';
 import './ScoreChart.css';
 

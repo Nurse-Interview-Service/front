@@ -1,13 +1,10 @@
-/* ===================================================================
-   0) 전역 및 배경 설정
-   =================================================================== */
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden; /* 가로 스크롤 방지 */
-  background-color: white; /* 최종 배경색 적용 */
+  overflow-x: hidden;
+  background-color: white;
 }
 
 .home-wrapper {
@@ -18,7 +15,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 3.3rem 1.1rem; /* 10% 증가 */
+  padding: 3.3rem 1.1rem;
   box-sizing: border-box;
 }
 
@@ -30,51 +27,43 @@ body, html {
   flex-direction: column;
   align-items: center;
 }
-
-/* ===================================================================
-   1) 동적 배경 (반응형 적용)
-   =================================================================== */
    
 background-container {
   width: 100%;
   height: 100%;
   
-  /* ★★★ 이 부분이 핵심입니다 ★★★ */
-  position: fixed; /* 요소를 브라우저 창(뷰포트) 자체에 고정시킵니다. */
+  position: fixed;
   
   top: 0;
   left: 0;
-  z-index: -1; /* 다른 모든 콘텐츠보다 뒤에 있도록 z-index를 음수로 설정합니다. */
+  z-index: -1;
   background-image: white;
   overflow: hidden; 
 }
 
-/* 2. 중앙 격자무늬 */
 .background-container::before {
   content: "";
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 55%; /* 10% 증가 */
-  height: 49.5%; /* 10% 증가 */
+  width: 55%;
+  height: 49.5%;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.7) 1px, transparent 1px),
     linear-gradient(to right, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
-  background-size: 33px 33px; /* 10% 증가 */
-  border-radius: 2.2rem; /* 10% 증가 */
+  background-size: 33px 33px;
+  border-radius: 2.2rem;
   mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
-/* 3. 블롭(Blob) 공통 및 개별 스타일 */
 .background-container > div {
   position: absolute;
   border-radius: 50%;
   opacity: 0.5;
-  filter: blur(110px); /* 10% 증가 */
+  filter: blur(110px);
 }
-
 
 .blob-c1 { width: 30vw; height: 20vw; background: rgba(59, 130, 246, 0.8); top: 43%; left: 3%; }
 .blob-c2 { width: 40vw; height: 18.15vw; background: rgba(139, 92, 246, 0.8); top: 58%; left: 3%;}
@@ -85,56 +74,49 @@ background-container {
 .blob-c7 { width: 70vw; height: 24.2vw; background: rgba(17, 91, 219, 1); top: 43%; left: 15%;}
 .blob-c8 { width: 30vw; height: 30.25vw; background: rgba(28, 159, 216, 0.874); top: 43%; right: 3%;}
 
-
-
-/* 블롭 움직임을 위한 키프레임 (반응형) */
 @keyframes move {
   from { transform: translate(0, 0) rotate(0deg) scale(1); }
-  to { transform: translate(11vw, 5.5vh) rotate(180deg) scale(1.1); } /* 10% 증가 */
+  to { transform: translate(11vw, 5.5vh) rotate(180deg) scale(1.1); }
 }
 
-/* ===================================================================
-   2) 콘텐츠 스타일 (최신 디자인 적용)
-   =================================================================== */
 .home-title {
   margin-top:4rem;
   text-align: center;
-  margin-bottom: 5.5rem; /* 10% 증가 */
+  margin-bottom: 1.5rem;
 }
 .home-title h1 {
   color: #6785e8;
-  font-size: 3.08rem; /* 10% 증가 */
+  font-size: 3.08rem;
   font-weight: 700;
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.2); /* 10% 증가 */
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
 }
 .home-subtitle {
-  margin-top: 1.1rem; /* 10% 증가 */
+  margin-top: 1.1rem;
   color: #717377;
-  font-size: 1.21rem; /* 10% 증가 */
   text-align: center;
   line-height: 1.6;
 }
 
 .home-explains {
   width: auto;
-  margin: 3rem auto 0rem auto; /* 10% 증가 */
+  margin: 3rem auto 0rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.55rem; /* 10% 증가 */
+  gap: 0.55rem;
   background: rgba(255, 255, 255, 0.315);
   border: 1px solid rgba(255, 255, 255, 0.467);
-  backdrop-filter: blur(5.5px); /* 10% 증가 */
+  backdrop-filter: blur(5.5px);
   -webkit-backdrop-filter: blur(5.5px);
   border-radius: 9999px;
-  padding: 0.55rem; /* 10% 증가 */
+  padding: 0.55rem;
 }
 .home-explains .tab {
   background: transparent;
   border: none;
-  padding: 0.825rem 1.65rem; /* 10% 증가 */
+  padding: 0.825rem 1.65rem;
   border-radius: 9999px;
-  font-size: 1.1rem; /* 10% 증가 */
+  font-size: 1.1rem;
   font-weight: 500;
   color: #525354;
   cursor: pointer;
@@ -146,22 +128,22 @@ background-container {
 .home-explains .tab.selected {
   background: #ffffff;
   color: #3B82F6;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.1); /* 10% 증가 */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
 }
 
 .home-content-area {
-  margin-top: 2.2rem; /* 10% 증가 */
-  width: 100%; /* 10% 증가 */
-  max-width: 1200px; /* 10% 증가 */
-  perspective: 1100px; /* 10% 증가 */
+  margin-top: 2.2rem;
+  width: 100%;
+  max-width: 1200px;
+  perspective: 1100px;
 }
 
 .tab-image {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 1.65rem; /* 10% 증가 */
-  box-shadow: 0 22px 55px rgba(0,0,0,0.15); /* 10% 증가 */
+  border-radius: 1.65rem;
+  box-shadow: 0 22px 55px rgba(0,0,0,0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: fadeIn 0.6s ease-in-out;
 }
@@ -171,38 +153,33 @@ background-container {
   color: #fff;
   border: none;
   padding: 1.1rem 2.75rem;
-  border-radius: 2.2rem; /* 10% 증가 */
-  font-size: 1.32rem; /* 10% 증가 */
-  /* margin-top:5rem; */
+  border-radius: 2.2rem;
+  font-size: 1.32rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 3rem; /* 10% 증가 */
-  box-shadow: 0 2px 9px rgba(99,102,241,0.2), 0 0 22px rgba(96, 165, 250, 0.3); /* 10% 증가 */
+  margin-top: 3rem;
+  box-shadow: 0 2px 9px rgba(99,102,241,0.2), 0 0 22px rgba(96, 165, 250, 0.3);
   transition: all 0.3s ease;
 }
 .main-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(99,102,241,0.3), 0 0 33px rgba(96, 165, 250, 0.4); /* 10% 증가 */
+  box-shadow: 0 4px 18px rgba(99,102,241,0.3), 0 0 33px rgba(96, 165, 250, 0.4);
 }
 
-/* ===================================================================
-   3) 미디어 쿼리 (화면 크기별 반응형 스타일)
-   =================================================================== */
 @media (max-width: 768px) {
   .home-title h1 {
-    font-size: 2.2rem; /* 10% 증가 */
+    font-size: 2.2rem;
   }
   .home-subtitle {
-    font-size: 1.1rem; /* 10% 증가 */
+    font-size: 1.1rem;
   }
   .background-container::before {
-    width: 95%; /* 10% 증가 (최대 95%로 제한) */
-    height: 55%; /* 10% 증가 */
+    width: 95%;
+    height: 55%;
   }
   .background-container > div {
-    filter: blur(66px); /* 10% 증가 */
+    filter: blur(66px);
   }
-  /* 모바일에서 블롭 크기(vw)를 늘려 시각적 존재감 유지 */
   .blob-c1 { width: 44vw; height: 44vw; }
   .blob-c7 { width: 55vw; height: 55vw; }
   .blob-c8 { width: 49.5vw; height: 49.5vw; }

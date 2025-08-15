@@ -1,0 +1,60 @@
+.result-container {
+  width: 100%;
+  padding: 60px 40px;
+  background-color: #f9faff;
+  box-sizing: border-box;
+}
+
+.padd {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px; /* 두 컨테이너 사이 여백 */
+  align-items: flex-start;
+}
+
+.vd {
+  flex: 0 0 360px;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px; 
+}
+
+.vd video {
+  border-radius: 12px; /* 비디오 모서리 둥글게 */
+  width: 100%;
+  display: block;
+}
+
+
+.result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-summary {
+  background: none;
+  padding: 20px;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 960px) {
+  .padd {
+    flex-direction: column;
+  }
+
+  .vd {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

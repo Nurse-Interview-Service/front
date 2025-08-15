@@ -1,0 +1,100 @@
+.su-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #b7d9f8 0%, #ffffff 85%);
+  font-family: 'Raleway', sans-serif;
+}
+
+.su-container {
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+
+.su-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 48px 48px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 12px;
+  border: 2px solid #a3c9f9;
+  background: rgba(255, 255, 255, 0.12);
+  color: #2C3E50;
+  font-size: 16px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.auth-form input::placeholder {
+  color: rgba(134, 118, 192, 0.7);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border: 2px solid #354fe6;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(139, 154, 239, 0.2);
+}
+
+.sub-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #354fe6;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sub-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 12px;
+  border: none;
+  border-bottom: 2px solid rgba(163, 201, 249, 0.6);
+  background: transparent;
+  color: #2C3E50;
+  font-size: 16px;
+  border-radius: 0;
+  backdrop-filter: blur(0px);
+  transition: all 0.3s ease;
+}
+
+.auth-form input::placeholder {
+  color: rgba(134, 118, 192, 0.7);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-bottom: 2px solid #354fe6;
+  box-shadow: 0 1px 0 rgba(53, 79, 230, 0.3);
+  background: transparent;
+}

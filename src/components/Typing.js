@@ -7,9 +7,9 @@ const endings = [
   "좋은 결과 있기를 바랍니다 ദ്ദി（• ˕ •)"
 ];
 
-const typingSpeed = 120;   // 글자 입력 속도
-const deletingSpeed = 60;  // 글자 삭제 속도 
-const holdDuration = 1500; // 문장 유지 시간
+const typingSpeed = 120; 
+const deletingSpeed = 60;
+const holdDuration = 1500;
 
 function TypingMent({ name = "지원자" }) {
   const [text, setText] = useState('');

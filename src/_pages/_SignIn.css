@@ -1,0 +1,167 @@
+.login-scene {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #b7d9f8 0%, #ffffff 85%);
+  font-family: 'Raleway', sans-serif;
+}
+
+.login-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.grid-overlay {
+  gap: 2px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  z-index: 10;
+  pointer-events: none;
+
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  border-radius: 1.5rem;
+}
+
+.grid-tile {
+  background: #a3c9f9;
+  margin: 1px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.grid-tile.revealed {
+  transform: rotate(45deg) rotateX(90deg);
+  opacity: 0;
+  transition-delay: calc(var(--i) * 0.06s);
+}
+
+/* 로그인 박스는 그대로 유지 */
+.center {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background:  #fbfcff; 
+  backdrop-filter: blur(15px);
+  border: 2px solid #a3c9f9; 
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 5;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  border-radius: 1.5rem;
+  pointer-events: none;
+  transform: translateY(10px); 
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.center input {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border: 2px solid #a3c9f9;
+  background: rgba(255, 255, 255, 0.12);
+  color: #2C3E50;
+  font-size: 16px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.center input::placeholder {
+  color: rgba(134, 118, 192, 0.7); /* 라벤더 그레이 톤 */
+}
+
+.center input:focus {
+  outline: none;
+  border: 2px solid #354fe6; /* 포커스 시 바이올렛 블루 */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(139, 154, 239, 0.2);
+}
+
+
+
+
+.center.fade-in {
+  animation: fadeIn 0.4s ease 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
+/* Divider */
+.divider {
+  margin: 12px 0;
+  color: #666;
+  font-size: 11px;
+}
+
+/* Kakao */
+.kakao-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.kakao-circle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffe812;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 22px;
+  color: #3c1e1e;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.kakao-circle-btn:hover {
+  transform: scale(1.05);
+}
+
+.auth-form {
+  display: contents; 
+}
+
+.sub-btn {  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: rgba(41, 71, 202, 0.705);
+  color:  rgb(237, 235, 247);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sub-btn:hover {
+  background: rgba(41, 71, 202, 0.705);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

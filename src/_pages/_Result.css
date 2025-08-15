@@ -1,0 +1,32 @@
+/* Result 페이지 스타일 */
+.result-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.12);
+}
+
+.result-container h2 {
+  color: #6366f1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.result-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 700px) {
+  .result-container {
+    padding: 1.5rem 0.7rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+}

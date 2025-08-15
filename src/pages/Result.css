@@ -1,32 +1,60 @@
-/* Result 페이지 스타일 */
 .result-container {
-  max-width: 800px;
-  margin: 4rem auto;
-  background: #fff;
-  padding: 2.5rem 2rem;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(99,102,241,0.12);
+  width: 100%;
+  padding: 60px 40px;
+  background-color: #f9faff;
+  box-sizing: border-box;
 }
 
-.result-container h2 {
-  color: #6366f1;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
+.padd {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px; /* 두 컨테이너 사이 여백 */
+  align-items: flex-start;
 }
 
-.result-content {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
+.vd {
+  flex: 0 0 360px;
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px; 
 }
 
-/* 모바일 반응형 */
-@media (max-width: 700px) {
-  .result-container {
-    padding: 1.5rem 0.7rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
+.vd video {
+  border-radius: 12px; /* 비디오 모서리 둥글게 */
+  width: 100%;
+  display: block;
+}
+
+
+.result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-summary {
+  background: none;
+  padding: 20px;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 960px) {
+  .padd {
+    flex-direction: column;
+  }
+
+  .vd {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
