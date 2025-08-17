@@ -58,6 +58,7 @@ function Result() {
   useEffect(() => {
     getAnalysisInfoApi(sessionId)
       .then(result => {
+<<<<<<< HEAD
         // 응답 포맷(axios/fetch)에 상관없이 payload를 통일해서 추출
         const payload =
           result?.data?.data   // axios: res.data.data
@@ -82,6 +83,17 @@ function Result() {
 
           // 문항별 video 수집
           const videoUrls = list.filter(item => !!item?.video).map(item => item.video);
+=======
+        if (result.success) {
+          const data = result.data;
+          console.log('API 응답 데이터:', data);
+          
+          setInterviewList(data.InterviewList || []); 
+          setSummary(data.summary || '');
+          
+          // 모든 인터뷰 항목에서 비디오 URL 수집
+          const videoUrls = data.InterviewList?.filter(item => item.video).map(item => item.video) || [];
+>>>>>>> 68136fd5ab0e9a908e8db1e67b05509701d1d371
           setVideos(videoUrls);
           console.log("모든 비디오 설정 완료:", videoUrls);
         } else {

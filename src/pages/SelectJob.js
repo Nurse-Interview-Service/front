@@ -8,7 +8,7 @@ const JOBS = [
   { id: 'developer', name: '개발자' },
   { id: 'doctor', name: '의사' },
   { id: 'planner', name: '기획자' },
-  { id: 'etc', name: '기타' }
+  { id: 'etc', name: '인성질문' }
 ];
 
 function SelectJob() {

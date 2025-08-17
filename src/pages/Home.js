@@ -51,7 +51,8 @@ function Home() {
       {/* 기존 콘텐츠는 content-container로 감싸서 배경 위에 오도록 처리 */}
       <div className="content-container">
         <div className='home-title'>
-          <h1>AI 기반 LLM 면접 서비스</h1>
+          <h1>AI 기반 개인 면접 서비스</h1>
+          {/* <h1>AI-Based Personal Interview Service</h1> */}
           <p className='home-subtitle'>
             실제 면접처럼, 다양한 분야의 질문을 AI가 제공합니다.<br />
             준비된 인터뷰로 실력을 점검해보세요!
