@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../UserContext';
 import { useNavigate } from 'react-router-dom';
-import { loginApi, kakaoLoginApi } from '../api/auth';
+import { loginApi, kakaoLoginApi } from '../api/authAPI';
 import './Auth.css';
 
 function SignIn() {
@@ -28,11 +28,12 @@ function SignIn() {
         const { username, email: userEmail, token } = result.data;
         
         // 토큰을 localStorage에 저장
-        localStorage.setItem('authToken', token);
-        localStorage.setItem('userInfo', JSON.stringify({ username, email: userEmail }));
+        localStorage.setItem('token', token);
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', userEmail);
         
         // Context에 사용자 정보 저장
-        signIn(userEmail);
+        signIn(userEmail, username);
         
         alert(`로그인 성공! 환영합니다, ${username}님!`);
         navigate('/');

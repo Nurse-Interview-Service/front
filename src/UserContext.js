@@ -11,6 +11,7 @@ export function UserProvider({ children }) {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
     const email = localStorage.getItem('email');
+    const savedInterviews = localStorage.getItem('interviews');
     
     if (token && username && email) {
       console.log('저장된 사용자 정보 복원:', { username, email });
@@ -18,6 +19,17 @@ export function UserProvider({ children }) {
         name: username,
         email: email
       });
+    }
+    
+    // 면접 내역 복원
+    if (savedInterviews) {
+      try {
+        const parsedInterviews = JSON.parse(savedInterviews);
+        setInterviews(parsedInterviews);
+        console.log('저장된 면접 내역 복원:', parsedInterviews);
+      } catch (error) {
+        console.error('면접 내역 복원 실패:', error);
+      }
     }
   }, []);
 
@@ -32,6 +44,11 @@ export function UserProvider({ children }) {
       email 
     };
     setUser(userData);
+    
+    // localStorage에 사용자 정보 저장 (새로고침 시 유지되도록)
+    localStorage.setItem('username', userData.name);
+    localStorage.setItem('email', userData.email);
+    
     console.log('사용자 로그인:', userData);
   };
 
@@ -40,15 +57,24 @@ export function UserProvider({ children }) {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
+    localStorage.removeItem('interviews');
+    
     setUser(null);
+    setInterviews([]);
+    
     console.log('사용자 로그아웃');
   };
 
   const addInterview = (job, answers) => {
-    setInterviews(prev => [
-      ...prev,
-      { job, answers, date: new Date().toISOString().slice(0, 10) }
-    ]);
+    const newInterview = { job, answers, date: new Date().toISOString().slice(0, 10) };
+    const updatedInterviews = [...interviews, newInterview];
+    
+    setInterviews(updatedInterviews);
+    
+    // localStorage에 면접 내역 저장 (새로고침 시 유지되도록)
+    localStorage.setItem('interviews', JSON.stringify(updatedInterviews));
+    
+    console.log('면접 내역 추가:', newInterview);
   };
 
   return (

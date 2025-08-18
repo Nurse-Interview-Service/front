@@ -1,4 +1,5 @@
 /* Interview 페이지 스타일 */
+@import '../components/AnalyzingOverlay.css';
 .interview-container {
   width: 1000px;
   height: 600px;
@@ -83,51 +84,6 @@
 .subtitle::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-}
-
-/* 분석 중 오버레이 */
-.analyzing-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.analyzing-card {
-  background: #fff;
-  padding: 2rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.analyzing-spinner {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 1.5rem;
-  border: 6px solid rgba(0,0,0,0.1);
-  border-top-color: #6366f1; /* 보라색 계열 */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.analyzing-text {
-  font-size: 1.25rem;
-  color: #333;
-  margin-bottom: 0.75rem;
-}
-
-.analyzing-subtext {
-  font-size: 0.9rem;
-  color: #666;
 }
 
 .question-box {

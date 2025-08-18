@@ -1,4 +1,3 @@
-// API 기본 설정 및 공통 함수들
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 class ApiError extends Error {
@@ -10,11 +9,17 @@ class ApiError extends Error {
   }
 }
 
-// 공통 fetch 함수
+// fetch
 export const apiRequest = async (endpoint, options = {}) => {
-  const url = `${API_BASE_URL}${endpoint}`;
+  let url = `${API_BASE_URL}${endpoint}`;
   
-  // 기본 헤더 설정
+  // query parameters
+  if (options.params) {
+    const searchParams = new URLSearchParams(options.params);
+    url += `?${searchParams.toString()}`;
+  }
+  
+  // Header
   const defaultHeaders = {
     'Content-Type': 'application/json',
   };
@@ -22,13 +27,15 @@ export const apiRequest = async (endpoint, options = {}) => {
   const config = {
     headers: { ...defaultHeaders, ...options.headers },
     ...options,
-  };
+  };  
+  
+
+  delete config.params;
 
   try {
     const response = await fetch(url, config);
     const data = await response.json();
 
-    // HTTP 상태 코드가 에러인 경우
     if (!response.ok) {
       throw new ApiError(
         data.message || '요청 처리 중 오류가 발생했습니다.',
@@ -43,7 +50,6 @@ export const apiRequest = async (endpoint, options = {}) => {
       throw error;
     }
     
-    // 네트워크 오류 등
     throw new ApiError(
       '서버와의 연결에 문제가 발생했습니다.',
       0,
@@ -52,20 +58,71 @@ export const apiRequest = async (endpoint, options = {}) => {
   }
 };
 
-// GET 요청
-export const apiGet = (endpoint) => {
-  return apiRequest(endpoint, { method: 'GET' });
+// GET
+export const apiGet = (endpoint, options = {}) => {
+  return apiRequest(endpoint, { method: 'GET', ...options });
 };
 
-// POST 요청
-export const apiPost = (endpoint, data) => {
+//POST 요청
+// export const apiPost = (endpoint, data) => {
+//   return apiRequest(endpoint, {
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//   });
+// };
+
+export const apiPost = (endpoint, { headers = {}, ...data } = {}) => {
   return apiRequest(endpoint, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers,
+    },
     body: JSON.stringify(data),
   });
 };
 
-// PUT 요청
+// FormData POST
+export const apiPostFormData = async (endpoint, formData, options = {}) => {
+  let url = `${API_BASE_URL}${endpoint}`;
+  
+  const defaultHeaders = {
+  };
+
+  const config = {
+    method: 'POST',
+    headers: { ...defaultHeaders, ...options.headers },
+    body: formData,
+    ...options,
+  };
+  
+  try {
+    const response = await fetch(url, config);
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new ApiError(
+        data.message || '파일 업로드 중 오류가 발생했습니다.',
+        response.status,
+        data
+      );
+    }
+
+    return data;
+  } catch (error) {
+    if (error instanceof ApiError) {
+      throw error;
+    }
+    
+    throw new ApiError(
+      '서버와의 연결에 문제가 발생했습니다.',
+      0,
+      null
+    );
+  }
+};
+
+// PUT
 export const apiPut = (endpoint, data) => {
   return apiRequest(endpoint, {
     method: 'PUT',
@@ -73,7 +130,7 @@ export const apiPut = (endpoint, data) => {
   });
 };
 
-// DELETE 요청
+// DELETE
 export const apiDelete = (endpoint) => {
   return apiRequest(endpoint, { method: 'DELETE' });
 };
