@@ -1,16 +1,16 @@
 
 <div align="center">
 <h1 align="center">
-Mock Interview
+EchoView
 </h1>
-  <img src="public/MI.png" alt="Frontend" width="300" />
+  <img src="public/EchoView.png" alt="Frontend" width="300" />
 </div>
 
 ### ✨ TEAM MEMBER
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/"><img src="public/u.png"width="100px"; alt=""/><br /><sub><b>PM/BE | 유채민</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/"><img src="https://avatars.githubusercontent.com/gtend" width="100px"; alt=""/><br /><sub><b>PM/BE | 유채민</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/jeonghyeonmin1"><img src="public/j.png" width="100px;" alt=""/><br /><sub><b>FE | 정현민</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/song-hae-in"><img src="public/s.png" width="100px;" alt=""/><br /><sub><b>BE | 송해인</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/SPIDEY1876"><img src="public/k.png" width="100px;" alt=""/><br /><sub><b>FE | 김동언</b></sub></a><br /></td>
@@ -25,6 +25,7 @@ Mock Interview
 5. [시스템 아키텍쳐](#시스템-아키텍쳐)
 6. [설치 및 실행 방법](#설치-및-실행-방법)
 7. [주요 기능](#주요-기능)
+7. [명세서](#📝-명세서)
 
 ## 프로젝트 소개
 
@@ -106,3 +107,7 @@ npm start
 ### 4. 인터뷰 기록 관리
 - 면접 종료 후 **결과 저장**
 - 프로필 페이지에서 과거 인터뷰 내역 및 피드백 확인 가능
+
+## 📝 명세서
+
+### [API 명세서](https://www.notion.so/API-23b1b52e7b3e8072a611c0ba3bce8d96?source=copy_link)
