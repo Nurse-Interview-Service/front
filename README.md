@@ -1,18 +1,19 @@
 
 <div align="center">
-<h1 align="center">
-EchoView
-</h1>
   <img src="public/EchoView.png" alt="Frontend" width="300" />
 </div>
+
+<h1 align="center">
+AI 기반 개인 면접 서비스
+</h1>
 
 ### ✨ TEAM MEMBER
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/"><img src="https://avatars.githubusercontent.com/gtend" width="100px"; alt=""/><br /><sub><b>PM/BE | 유채민</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/"><img src="https://avatars.githubusercontent.com/gtend" width="100px"; alt=""/><br /><sub><b>PM/BE/FE | 유채민</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/jeonghyeonmin1"><img src="public/j.png" width="100px;" alt=""/><br /><sub><b>FE | 정현민</b></sub></a><br /></td>
-      <td align="center"><a href="https://github.com/song-hae-in"><img src="public/s.png" width="100px;" alt=""/><br /><sub><b>BE | 송해인</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/song-hae-in"><img src="public/s.png" width="100px;" alt=""/><br /><sub><b>FE | 송해인</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/SPIDEY1876"><img src="public/k.png" width="100px;" alt=""/><br /><sub><b>FE | 김동언</b></sub></a><br /></td>
   </tbody>
 </table>
