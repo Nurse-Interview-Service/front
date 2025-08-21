@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="public/EchoView.png" alt="Frontend" width="300" />
+  <img src="public/EchoView_logo.png" alt="Frontend" width="300" />
 </div>
 
 <h1 align="center">
