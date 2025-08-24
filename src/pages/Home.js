@@ -13,7 +13,7 @@ const tabData = [
     id: 2,
     text: '면접 화면',
     // imgSrc: 'https://placehold.co/1200x750/10B981/FFFFFF?text=%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B4+%E1%84%86%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%B8&font=noto-sans-kr',
-    imgSrc: 'interview_example.mov',
+    imgSrc: 'interview_example.mp4',
   },
   // {
   //   id: 3,
@@ -25,7 +25,7 @@ const tabData = [
     id: 3,
     text: '면접 내용 분석&피드백',
     // imgSrc: 'https://placehold.co/1200x750/F59E0B/FFFFFF?text=%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8+%26+%E1%84%91%E1%85%B5%E1%84%83%E1%85%B3%E1%84%87%E1%85%A2%E1%86%A8&font=noto-sans-kr',
-    imgSrc: 'interview_analysis.mov',
+    imgSrc: 'interview_analysis.mp4',
   },
 ];
 
